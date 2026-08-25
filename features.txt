@@ -1,0 +1,1 @@
+rating,win_odds,weight,draw,odds_rank,rating_rank,weight_rating_ratio,race_size,top3_rating,top3_odds,trainer_freq,jockey_freq

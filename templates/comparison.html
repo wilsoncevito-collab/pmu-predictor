@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparaison - PMU Predictor</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, sans-serif; background: #f0f2f5; padding: 1rem; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .header { background: #1a2a3a; color: white; padding: 1rem; border-radius: 12px; margin-bottom: 1rem; display: flex; justify-content: space-between; align-items: center; }
+        .header h1 { font-size: 1.2rem; }
+        .back-btn { color: white; text-decoration: none; background: rgba(255,255,255,0.15); padding: 0.3rem 0.8rem; border-radius: 6px; }
+        .card { background: white; padding: 1rem; border-radius: 12px; margin-bottom: 1rem; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+        .stats-grid { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 0.5rem; }
+        .stat { background: #f8f9fa; padding: 0.5rem; border-radius: 8px; text-align: center; }
+        .stat-value { font-size: 1.2rem; font-weight: bold; color: #1a2a3a; }
+        .stat-label { font-size: 0.6rem; color: #888; text-transform: uppercase; }
+        .result-item { display: flex; justify-content: space-between; padding: 0.4rem 0; border-bottom: 1px solid #eee; font-size: 0.85rem; flex-wrap: wrap; }
+        .result-item:last-child { border-bottom: none; }
+        .correct { color: #28a745; font-weight: bold; }
+        .incorrect { color: #dc3545; font-weight: bold; }
+        .loading { text-align: center; color: #888; padding: 2rem; }
+        .error { color: #dc3545; padding: 1rem; text-align: center; }
+        .badge-success { background: #28a745; color: white; padding: 0.1rem 0.5rem; border-radius: 12px; font-size: 0.7rem; }
+        .badge-danger { background: #dc3545; color: white; padding: 0.1rem 0.5rem; border-radius: 12px; font-size: 0.7rem; }
+        .roi-positive { color: #28a745; font-weight: bold; }
+        .roi-negative { color: #dc3545; font-weight: bold; }
+        @media (max-width: 600px) {
+            .stats-grid { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📊 Comparaison Prédictions vs Résultats</h1>
+            <a href="/" class="back-btn">← Retour</a>
+        </div>
+
+        <div id="stats-container">
+            <div class="loading">Chargement...</div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-top: 0.5rem;">
+            <button class="btn" style="background:#1a2a3a;color:white;padding:0.75rem;border:none;border-radius:8px;cursor:pointer;" onclick="loadComparison()">🔄 Rafraîchir</button>
+        </div>
+    </div>
+
+    <script>
+        function loadComparison() {
+            const container = document.getElementById('stats-container');
+            container.innerHTML = '<div class="loading">Chargement...</div>';
+            
+            fetch('/api/comparison')
+                .then(r => r.json())
+                .then(data => {
+                    if (!data.success) {
+                        container.innerHTML = `<div class="error">❌ ${data.error || 'Erreur'}</div>`;
+                        return;
+                    }
+
+                    const stats = data.data;
+                    if (stats.total_races === 0) {
+                        container.innerHTML = '<div class="error">⚠️ Aucune donnée de comparaison disponible</div>';
+                        return;
+                    }
+
+                    const roiClass = stats.roi > 0 ? 'roi-positive' : 'roi-negative';
+                    const winRateClass = stats.win_rate > 50 ? 'correct' : 'incorrect';
+
+                    let html = `
+                        <div class="card">
+                            <div class="stats-grid">
+                                <div class="stat">
+                                    <div class="stat-value">${stats.total_races}</div>
+                                    <div class="stat-label">Courses</div>
+                                </div>
+                                <div class="stat">
+                                    <div class="stat-value ${winRateClass}">${stats.win_rate}%</div>
+                                    <div class="stat-label">Taux de réussite</div>
+                                </div>
+                                <div class="stat">
+                                    <div class="stat-value">${stats.correct_predictions}/${stats.total_races}</div>
+                                    <div class="stat-label">Correctes</div>
+                                </div>
+                                <div class="stat">
+                                    <div class="stat-value ${roiClass}">${stats.roi}%</div>
+                                    <div class="stat-label">ROI simulé</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <h2 style="margin-bottom:0.5rem;">📋 Détails par course</h2>
+                            <div style="font-size:0.8rem;color:#888;margin-bottom:0.5rem;">Cote moyenne des favoris: ${stats.avg_odds}</div>
+                    `;
+
+                    stats.results.forEach(r => {
+                        const status = r.is_correct ? '✅' : '❌';
+                        const badge = r.is_correct ? '<span class="badge-success">Correct</span>' : '<span class="badge-danger">Incorrect</span>';
+                        html += `
+                            <div class="result-item">
+                                <div>
+                                    <strong>${r.venue} #${r.race_no}</strong>
+                                    <span style="margin-left:0.5rem;">${status}</span>
+                                </div>
+                                <div>
+                                    <span>Favori: ${r.favorite_name} (${r.favorite_odds})</span>
+                                    <span style="margin-left:0.5rem;">→ Gagnant: ${r.winner_name}</span>
+                                    <span style="margin-left:0.5rem;">${badge}</span>
+                                </div>
+                            </div>
+                        `;
+                    });
+
+                    html += `
+                        </div>
+                        <div style="background:#e3f2fd;padding:1rem;border-radius:8px;margin-top:0.5rem;color:#0d47a1;">
+                            <strong>💡 Interprétation:</strong>
+                            ${stats.win_rate > 70 ? '✅ Excellent taux de réussite ! Le modèle identifie bien les favoris.' :
+                              stats.win_rate > 50 ? '👍 Bon taux de réussite. Le modèle est fiable.' :
+                              stats.win_rate > 30 ? '⚠️ Taux moyen. Des améliorations sont possibles.' :
+                              '❌ Taux faible. Le modèle doit être amélioré.'}
+                            ${stats.roi > 0 ? ` ROI positif (${stats.roi}%) → Stratégie rentable sur le long terme.` :
+                              ` ROI négatif (${stats.roi}%) → Stratégie à revoir.`}
+                        </div>
+                    `;
+
+                    container.innerHTML = html;
+                })
+                .catch(err => {
+                    container.innerHTML = `<div class="error">❌ Erreur: ${err.message}</div>`;
+                });
+        }
+
+        loadComparison();
+    </script>
+</body>
+</html>

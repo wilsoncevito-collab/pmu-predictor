@@ -1,0 +1,16 @@
+{
+  "name": "pipeline-pmu",
+  "version": "1.0.0",
+  "description": "",
+  "main": "test-api.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "hkjc-api": "^1.0.1"
+  }
+}

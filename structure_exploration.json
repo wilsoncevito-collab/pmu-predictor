@@ -1,0 +1,35 @@
+{
+  "premierMeeting": {
+    "venueCode": "S4",
+    "premiereCourse": {
+      "premierRunner": [
+        "id",
+        "no",
+        "standbyNo",
+        "status",
+        "name_ch",
+        "name_en",
+        "horse",
+        "color",
+        "barrierDrawNumber",
+        "handicapWeight",
+        "currentWeight",
+        "currentRating",
+        "internationalRating",
+        "gearInfo",
+        "racingColorFileName",
+        "allowance",
+        "trainerPreference",
+        "last6run",
+        "saddleClothNo",
+        "trumpCard",
+        "priority",
+        "finalPosition",
+        "deadHeat",
+        "winOdds",
+        "jockey",
+        "trainer"
+      ]
+    }
+  }
+}

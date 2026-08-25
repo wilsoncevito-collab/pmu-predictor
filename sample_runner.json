@@ -1,0 +1,39 @@
+{
+  "id": "20260822S40801",
+  "no": "1",
+  "standbyNo": "",
+  "status": "Ran",
+  "name_ch": "芬高艦長",
+  "name_en": "Captain Fenkel (AUS)",
+  "horse": {
+    "id": "20260822S40801H",
+    "code": "20260822S40801H"
+  },
+  "color": "20260822_S4_r8_h01",
+  "barrierDrawNumber": "7",
+  "handicapWeight": "130",
+  "currentWeight": "",
+  "currentRating": "",
+  "internationalRating": "76",
+  "gearInfo": "B/TT",
+  "racingColorFileName": "20260822_S4_r8_h01",
+  "allowance": "",
+  "trainerPreference": "",
+  "last6run": "1/5/1/11/8",
+  "saddleClothNo": "01",
+  "trumpCard": false,
+  "priority": false,
+  "finalPosition": 14,
+  "deadHeat": false,
+  "winOdds": "12",
+  "jockey": {
+    "code": "20260822S40801J",
+    "name_en": "Hugh Bowman",
+    "name_ch": "布文"
+  },
+  "trainer": {
+    "code": "20260822S40801T",
+    "name_en": "M Beer & G Carpenter",
+    "name_ch": "比雅及啟培棟"
+  }
+}

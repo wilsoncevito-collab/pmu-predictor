@@ -1,0 +1,178 @@
+date,venue,race_no,horse_name,horse_number,draw,weight,rating,age,sex,trainer,jockey,win_odds
+,S4,1,Captain Fenkel (AUS),1,7,130,76.0,,,M Beer & G Carpenter,Hugh Bowman,12.0
+,S4,1,I Park (NZ),2,6,126,72.0,,,Lauren Brennan,Tim Clark,7.8
+,S4,1,Le Troisir (NZ),3,1,126,72.0,,,Chris Waller,James McDonald,2.0
+,S4,1,Golden Century (NZ),4,15,125,71.0,,,Chris Waller,Tommy Berry,15.0
+,S4,1,Amplify (AUS),5,6,123,74.0,,,Ciaron Maher,TBC,
+,S4,1,Foire De Trone (NZ),6,4,123,74.0,,,Ciaron Maher,Ethan Brown,8.2
+,S4,1,Skycatcher (NZ),7,14,123,70.0,,,M Price & M Kent (Jnr),Dylan Gibbons,17.0
+,S4,1,Celebrity (NZ),8,12,122,69.0,,,Bjorn Baker,Rachel King,22.0
+,S4,1,Forbidden Riff (AUS),9,2,121,68.0,,,R & W Freedman,Kerrin McEvoy,24.0
+,S4,1,Trapalanda (IRE),10,11,121,68.0,,,A & R Archibald,Tom Sherry,10.0
+,S4,1,Spacetime Legend (AUS),11,8,119,59.0,,,Joel Wilkes,Mikayla Weir,118.0
+,S4,1,Michelangelo (AUS),12,9,117,63.0,,,Dean Mirfin,Ben Thompson,29.0
+,S4,1,Seo Linn (IRE),13,5,115,66.0,,,Chris Waller,Tyler Schiller,91.0
+,S4,1,Anulfa (AUS),14,3,115,59.0,,,Stephen Hill,M Fitzgerald (a) (-7),72.0
+,S4,1,Chuckler (AUS),15,10,115,58.0,,,Jack Pilkington,Reece Jones,122.0
+,S4,1,Autafinna (NZ),16,13,115,54.0,,,Patrick Cleave,Alysha Collett,57.0
+,S4,2,King Of The Sea (GB),1,9,133,79.0,,,Ciaron Maher,James McDonald,1.7
+,S4,2,The Creator (NZ),2,1,133,79.0,,,M Price & M Kent (Jnr),Tommy Berry,5.6
+,S4,2,Montpellier (GB),3,4,130,76.0,,,A & R Archibald,M Fitzgerald (a) (-7),12.0
+,S4,2,Walking Painting (GB),4,8,130,76.0,,,R & W Freedman,W Stanley (a) (-7),75.0
+,S4,2,Zenmaster (AUS),5,10,130,76.0,,,Craig Carmody,Winona Costin,28.0
+,S4,2,Inquiring Minds (GB),6,12,129,75.0,,,J O'Shea & T Charlton,Hugh Bowman,42.0
+,S4,2,Zouna (AUS),7,3,129,75.0,,,J O'Shea & T Charlton,Kerrin McEvoy,25.0
+,S4,2,Pier Pressure (AUS),8,7,127,77.0,,,Kris Lees,Dylan Gibbons,
+,S4,2,Puntin (NZ),9,5,127,73.0,,,Bjorn Baker,Adam Hyeronimus,12.0
+,S4,2,Cosmeena (AUS),10,6,126,76.0,,,Michael Vella,Rachel King,36.0
+,S4,2,Champagne Hero (AUS),11,15,125,71.0,,,G Waterhouse & A Bott,Tim Clark,
+,S4,2,Avista (AUS),12,14,123,74.0,,,P Messara/L Gavranich,Braith Nock (a) (-3),
+,S4,2,Cape Byron (AUS),13,10,122,69.0,,,M & M Conners,TBC,
+,S4,2,Barking Mad (AUS),14,7,121,68.0,,,Chris Waller,Tyler Schiller,11.0
+,S4,2,Scalextrics (AUS),15,2,121,68.0,,,Matthew Smith,Ashley Morgan,93.0
+,S4,2,Anthracite (NZ),16,11,120,67.0,,,Joseph Pride,Andrew Adkins,18.0
+,S4,2,I've Bean Tryin' (AUS),17,2,120,67.0,,,Matthew Kelley,Alysha Collett,
+,S4,3,Changingoftheguard (IRE),1,4,131,113.0,,,Kris Lees,Tim Clark,15.0
+,S4,3,Thebudgiesmugla (NZ),2,6,121,101.0,,,Bjorn Baker,Dylan Gibbons,5.8
+,S4,3,Glory Daze (IRE),3,8,120,101.0,,,Ciaron Maher,Regan Bayliss,
+,S4,3,Nellie Leylax (IRE),4,5,120,99.0,,,A & R Archibald,Alysha Collett,
+,S4,3,Boniface (FR),5,5,119,94.0,,,M Price & M Kent (Jnr),Tommy Berry,2.4
+,S4,3,Sky Lab (AUS),6,2,119,86.0,,,Paul Perry,Shannen Llewellyn (a),70.0
+,S4,3,Matusalem (AUS),7,7,118,98.0,,,Chris Waller,Tyler Schiller,9.1
+,S4,3,Belvedere Boys (AUS),8,8,117,101.0,,,Matthew Dunn,Kerrin McEvoy,28.0
+,S4,3,So You Are (AUS),9,3,117,99.0,,,Bjorn Baker,Rachel King,3.3
+,S4,3,Elliptical (AUS),10,1,117,94.0,,,Chris Waller,Andrew Adkins,10.0
+,S4,4,Savvy Hallie (AUS),1,6,130,111.0,,,Brad Widdup,Nash Rawiller,2.7
+,S4,4,Apocalyptic (AUS),2,5,129,109.0,,,Michael Freedman,Tommy Berry,2.7
+,S4,4,Midnight In Tokyo (AUS),3,8,129,102.0,,,Todd Pollard,Ben Thompson,
+,S4,4,Infancy (AUS),4,4,128,105.0,,,Kris Lees,Hugh Bowman,
+,S4,4,Catch The Glory (AUS),5,7,127,107.0,,,Jason Coyle,Adam Hyeronimus,19.0
+,S4,4,Prima Bella (NZ),6,2,117,,,,Matthew Smith,Kerrin McEvoy,5.0
+,S4,4,Karinska (AUS),7,4,117,101.0,,,Chris Waller,Tyler Schiller,22.0
+,S4,4,Stardom (AUS),8,3,117,100.0,,,G Waterhouse & A Bott,Rachel King,13.0
+,S4,4,Gatwick (AUS),9,1,117,,,,M Price & M Kent (Jnr),Dylan Gibbons,9.5
+,S4,5,Cherry Bomshell (AUS),1,2,126,103.0,,,A & R Archibald,Ben Thompson,2.9
+,S4,5,Pembrey (AUS),2,9,123,104.0,,,Tony Gollan,James McDonald,4.8
+,S4,5,Agrarian Girl (AUS),3,6,121,97.0,,,G Waterhouse & A Bott,Tim Clark,6.4
+,S4,5,By Choice (AUS),4,7,121,98.0,,,G Waterhouse & A Bott,Rachel King,13.0
+,S4,5,Bangkok Hottie (AUS),5,10,121,90.0,,,David Payne,Kerrin McEvoy,5.6
+,S4,5,Krasina (AUS),6,1,121,86.0,,,David Payne,Ashley Morgan,23.0
+,S4,5,Global Goal (AUS),7,4,121,,,,John Sargent,Dylan Gibbons,14.0
+,S4,5,Reachin' Out (AUS),8,5,121,88.0,,,G Waterhouse & A Bott,Regan Bayliss,42.0
+,S4,5,Striking Alibi (AUS),9,3,121,82.0,,,Chris Waller,Tommy Berry,
+,S4,5,Coco Affair (AUS),10,3,121,,,,J O'Shea & T Charlton,Ethan Brown,23.0
+,S4,5,Screen Icon (AUS),11,8,121,100.0,,,John Thompson,Chad Schofield,12.0
+,S4,6,Midnight In Tokyo (AUS),1,6,128,102.0,,,Todd Pollard,Ben Thompson,5.6
+,S4,6,Disneck (AUS),2,8,128,104.0,,,Bjorn Baker,Tim Clark,16.0
+,S4,6,Enriched (AUS),3,2,128,102.0,,,Michael Freedman,Kerrin McEvoy,4.7
+,S4,6,Aviatress (AUS),4,4,127,104.0,,,Liam Ruddy,Alysha Collett,40.0
+,S4,6,Infancy (AUS),5,3,127,105.0,,,Kris Lees,Dylan Gibbons,17.0
+,S4,6,Catch The Glory (AUS),6,7,126,107.0,,,Jason Coyle,Adam Hyeronimus,
+,S4,6,Matcha Latte (AUS),7,5,126,99.0,,,Nacim Dilmi,Ashley Morgan,8.8
+,S4,6,Campione D'Italia (AUS),8,7,125,112.0,,,Chris Waller,Tommy Berry,3.4
+,S4,6,Soothsayer (AUS),9,1,123,97.0,,,Michael Freedman,Rachel King,3.6
+,S4,6,Carbonados (NZ),10,10,121,,,,"Ben, Will & JD Hayes",Chad Schofield,
+,S4,7,Ceolwulf (NZ),1,6,130,119.0,,,Joseph Pride,Chad Schofield,78.0
+,S4,7,Gringotts (NZ),2,5,130,117.0,,,Ciaron Maher,Ethan Brown,27.0
+,S4,7,Lindermann (AUS),3,10,130,116.0,,,Chris Waller,Hugh Bowman,44.0
+,S4,7,Midnight Dynamite (AUS),4,4,130,106.0,,,Bjorn Baker,Tim Clark,56.0
+,S4,7,Beiwacht (AUS),5,4,129,118.0,,,Chris Waller,Nash Rawiller,
+,S4,7,Autumn Boy (AUS),6,6,129,115.0,,,Chris Waller,Adam Hyeronimus,
+,S4,7,Green Spaces (AUS),7,11,129,114.0,,,Bjorn Baker,Rachel King,70.0
+,S4,7,Autumn Glow (AUS),8,3,126,120.0,,,Chris Waller,James McDonald,1.4
+,S4,7,Aeliana (NZ),9,9,126,115.0,,,Chris Waller,Nash Rawiller         ,16.0
+,S4,7,Fangirl (AUS),10,8,126,115.0,,,Chris Waller,Tommy Berry,35.0
+,S4,7,Idle Flyer (AUS),11,7,126,114.0,,,Matthew Smith,Tyler Schiller,53.0
+,S4,7,Lady Shenandoah (AUS),12,2,126,112.0,,,Chris Waller,Kerrin McEvoy,25.0
+,S4,7,Barnavara (IRE),13,13,126,112.0,,,Chris Waller,Sam Clipperton,
+,S4,7,Sheza Alibi (AUS),14,1,125,118.0,,,P G Moody & K Coleman,Luke Nolen,3.8
+,S4,8,Columbia Blue (AUS),1,9,133,79.0,,,Joseph Pride,Nash Rawiller,3.4
+,S4,8,Sovereign Hill (AUS),2,4,132,78.0,,,G Waterhouse & A Bott,Adam Hyeronimus,14.0
+,S4,8,Zouper Fund (AUS),3,15,132,78.0,,,Ciaron Maher,S Llewellyn (a) (-6),
+,S4,8,Mogo Magic (AUS),4,11,131,77.0,,,Scott Collings,Braith Nock (a) (-3),21.0
+,S4,8,Bartolf (AUS),5,8,130,76.0,,,J O'Shea & T Charlton,Hugh Bowman,13.0
+,S4,8,Alabama State (AUS),6,13,129,75.0,,,Jack Pilkington,Ethan Brown           ,27.0
+,S4,8,Call Me Gorgeous (AUS),7,10,129,75.0,,,David Pfieffer,Kerrin McEvoy,7.0
+,S4,8,Exit Fee (NZ),8,6,127,73.0,,,Danny Williams,Chad Schofield,20.0
+,S4,8,Snack Bar (AUS),9,5,127,73.0,,,Bjorn Baker,Rachel King,15.0
+,S4,8,Annie's Rose (AUS),10,7,126,76.0,,,Kristen Buchanan,Reece Jones,22.0
+,S4,8,Hidrix (AUS),11,3,125,79.0,,,Chris Waller,James McDonald,7.7
+,S4,8,Love Shuck (AUS),12,12,125,71.0,,,Todd Smart,Sairyn Fawke,64.0
+,S4,8,Ernaux (AUS),13,2,121,72.0,,,Chris Waller,Tommy Berry,4.1
+,S4,8,Micro Mikki (AUS),14,6,121,68.0,,,Brett Robb,Sam Clipperton,
+,S4,8,Chemtrail (AUS),15,1,115,60.0,,,Danny Williams,Andrew Adkins,124.0
+,S4,1,Limestone (IRE),1,6,135,105.0,,,Joseph O'Brien,Ryan Moore,3.7
+,S4,1,Infraad (IRE),2,4,127,97.0,,,William Haggas,Tom Marquand,4.3
+,S4,1,Into The Light (GB),3,5,126,96.0,,,Charlie Appleby,William Buick,12.0
+,S4,1,Tierra Del Toro (GB),4,15,125,95.0,,,Ralph Beckett,James Doyle,35.0
+,S4,1,Mythical Bay (IRE),5,3,122,92.0,,,Andrew Balding,Oisin Murphy,5.3
+,S4,1,Galilean Quality (IRE),6,9,121,91.0,,,Karl Burke,Sam James,14.0
+,S4,1,My Ballyquinn (GB),7,10,119,89.0,,,David O'Meara,Mark Winn,42.0
+,S4,1,Glory Road (GER),8,17,118,88.0,,,Ralph Beckett,Edward Greatrex,20.0
+,S4,1,Sharkeyboy (FR),9,2,118,88.0,,,Willie Mullins,Saffie Osborne,11.0
+,S4,1,Who's Lope (GB),10,7,116,86.0,,,Andrew Balding,Nicola Currie,37.0
+,S4,1,Baltic Fleet (IRE),11,12,116,86.0,,,Ian Williams,Andrew Mullen,88.0
+,S4,1,Devil's Peak (GB),12,1,116,86.0,,,John & Thady Gosden,Tyler Heard,72.0
+,S4,1,Bay Of Stars (GB),13,8,116,86.0,,,Dermot Weld,Ray Dawson,17.0
+,S4,1,Steel Raven (IRE),14,11,115,85.0,,,Adrian Keatley,Barry McHugh,137.0
+,S4,1,Vantage Code (IRE),15,14,114,84.0,,,Emmet Mullins,Rory Cleary,37.0
+,S4,1,Eniac (IRE),16,13,114,82.0,,,Brian Ellison,Cam Hardie,90.0
+,S4,1,Probation (GB),17,16,114,81.0,,,K Philippart de Foy,Harry Vigors (-5),38.0
+,S4,2,Lake Forest (GB),1,5,134,118.0,,,William Haggas,Cieren Fallon,6.7
+,S4,2,Marvelman (IRE),2,3,134,114.0,,,Andrew Balding,Patrick McDonald,22.0
+,S4,2,Native Warrior (GB),3,6,134,110.0,,,Karl Burke,Clifford Lee,52.0
+,S4,2,Notable Speech (GB),4,1,134,124.0,,,Charlie Appleby,William Buick,3.2
+,S4,2,Paborus (GB),5,13,134,113.0,,,Edward Bethell,James Doyle,27.0
+,S4,2,Powerful Glory (IRE),6,9,134,115.0,,,Richard & Peter Fahey,Jamie Spencer,74.0
+,S4,2,Rogue Diplomat (IRE),7,12,134,113.0,,,James Owen,Harry Davies,23.0
+,S4,2,Satono Reve (JPN),8,4,134,118.0,,,Noriyuki Hori,Joao Moreira,7.0
+,S4,2,Ten Bob Tony (IRE),9,8,134,121.0,,,Ed Walker,Kieran Shoemark,4.7
+,S4,2,Flora Of Bermuda (IRE),10,10,131,111.0,,,Andrew Balding,Oisin Murphy,12.0
+,S4,2,Lifeplan (IRE),11,14,129,113.0,,,Declan Carroll,Zak Wheatley,93.0
+,S4,2,Power Blue (IRE),12,7,129,110.0,,,Robson De Aguiar,David Egan,48.0
+,S4,2,Puerto Rico (IRE),13,11,129,113.0,,,Aidan O'Brien,Ryan Moore,33.0
+,S4,2,Zavateri (IRE),14,2,129,118.0,,,Eve Johnson Houghton,Charles Bishop,9.7
+,S4,3,Opportunity (GB),1,6,138,110.0,,,William Haggas,James Doyle,16.0
+,S4,3,Epic Poet (IRE),2,7,137,109.0,,,David O'Meara,Daniel Tudhope,74.0
+,S4,3,Paradias (GER),3,2,135,107.0,,,Alan King,Kieran Shoemark,93.0
+,S4,3,Furthur (IRE),4,16,134,106.0,,,Andrew Balding,Oisin Murphy,47.0
+,S4,3,Spinning Wheel (GB),5,24,134,102.0,,,Simon & Ed Crisford,Mason Paetel (-5),54.0
+,S4,3,Tarriance (GB),6,12,133,105.0,,,Andrew Balding,Colin Keane,15.0
+,S4,3,Mr Hollywood (IRE),7,20,133,105.0,,,Willie Mullins,Saffie Osborne,19.0
+,S4,3,Daiquiri Bay (GB),8,1,133,105.0,,,Alan King,Rossa Ryan,8.7
+,S4,3,Hopewell Rock (IRE),9,3,133,101.0,,,George Boughey,Callum Rodriguez,8.3
+,S4,3,Emit (IRE),10,11,132,104.0,,,Joseph O'Brien,Ryan Moore,5.4
+,S4,3,Paddy The Squire (GB),11,14,132,104.0,,,Iain Jardine,Andrew Mullen,21.0
+,S4,3,Poetic Sound (IRE),12,22,130,102.0,,,Ger Lyons,Gary Carroll,70.0
+,S4,3,Align The Stars (IRE),13,17,129,101.0,,,Charlie Johnston,Daniel Muscutt,76.0
+,S4,3,Burdett Road (GB),14,4,129,101.0,,,James Owen,Harry Davies,114.0
+,S4,3,Beylerbeyi (GB),15,21,129,101.0,,,Ian Williams,Clifford Lee,28.0
+,S4,3,Stressfree (FR),16,5,127,99.0,,,David O'Meara,Mark Winn,104.0
+,S4,3,Klassleader (GB),17,13,126,98.0,,,William Haggas,Tom Marquand,7.1
+,S4,3,Ascending (IRE),18,9,126,98.0,,,Henry De Bromhead,Oisin Orr,24.0
+,S4,3,Square Necker (FR),19,23,125,97.0,,,K Philippart de Foy,David Egan,16.0
+,S4,3,Real Dream (IRE),20,10,124,96.0,,,Ian Williams,Cieren Fallon,50.0
+,S4,3,Circus Of Rome (GB),21,8,124,96.0,,,Richard Hughes,Jamie Spencer,70.0
+,S4,3,Love Me Tender (GER),22,15,124,96.0,,,Willie Mullins,William Buick,6.7
+,S4,3,Enemy (GB),23,19,123,95.0,,,Ian Williams,TBC,
+,S4,3,Dancing In Paris (FR),24,18,123,91.0,,,Ian Williams,TBC,
+,S4,4,Stratusnine (IRE),1,13,138,104.0,,,Hugo Palmer,Harry Davies,15.0
+,S4,4,Sondad (GB),2,7,138,104.0,,,M & D Easterby,Joanna Mason,11.0
+,S4,4,Golden Mind (IRE),3,6,134,100.0,,,Richard & Peter Fahey,Oisin Orr,74.0
+,S4,4,Evening Saigon (IRE),4,4,134,100.0,,,Hamad Al Jehani,James Doyle,7.9
+,S4,4,Far Above Dream (IRE),5,12,133,99.0,,,James Owen,Kieran Shoemark,14.0
+,S4,4,Fine Interview (FR),6,1,133,99.0,,,Hamad Al Jehani,Callum Rodriguez,40.0
+,S4,4,Dance In The Storm (GB),7,11,133,99.0,,,Andrew Balding,Oisin Murphy,4.0
+,S4,4,Annaf (IRE),8,16,132,98.0,,,Michael Appleby,Daniel Muscutt,74.0
+,S4,4,Pocklington (GB),9,10,132,98.0,,,Geoff Oldroyd,Clifford Lee,45.0
+,S4,4,Fahrenheit Seven (GB),10,15,131,97.0,,,Robert Cowell,Ray Dawson,175.0
+,S4,4,King Of Light (GB),11,9,131,97.0,,,Stuart Williams,Ryan Moore,19.0
+,S4,4,Toca Madera (IRE),12,14,130,96.0,,,David O'Meara,Daniel Tudhope,25.0
+,S4,4,Flash Harry (GB),13,17,130,96.0,,,Clive Cox,Rossa Ryan,33.0
+,S4,4,Pure Legend (FR),14,5,130,96.0,,,Kevin Ryan,Kevin Stott,86.0
+,S4,4,Hammer The Hammer (IRE),15,18,130,96.0,,,Kevin Ryan,Shane Gray,80.0
+,S4,4,Realign (FR),16,2,130,96.0,,,William Haggas,Tom Marquand,20.0
+,S4,4,Air Force One (IRE),17,3,130,91.0,,,Geoff Oldroyd,Patrick McDonald,5.5
+,S4,4,Desert Falcon (IRE),18,8,129,95.0,,,Julie Camacho,Ryan Sexton,132.0
+,S4,4,Red Spells Danger (IRE),19,19,129,98.0,,,Tim Easterby,David Allan,17.0
+,S4,4,Coul Angel (IRE),20,20,128,94.0,,,Michael Appleby,Saffie Osborne,10.0

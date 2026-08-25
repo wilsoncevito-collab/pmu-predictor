@@ -1,0 +1,66 @@
+[
+  {
+    "raceNo": 1,
+    "favoriteNumber": 3,
+    "favoriteName": "Le Troisir (NZ)",
+    "favoriteOdds": 2.0,
+    "favoriteRating": 72.0,
+    "totalRunners": 32
+  },
+  {
+    "raceNo": 2,
+    "favoriteNumber": 1,
+    "favoriteName": "King Of The Sea (GB)",
+    "favoriteOdds": 1.7,
+    "favoriteRating": 79.0,
+    "totalRunners": 26
+  },
+  {
+    "raceNo": 3,
+    "favoriteNumber": 5,
+    "favoriteName": "Boniface (FR)",
+    "favoriteOdds": 2.4,
+    "favoriteRating": 94.0,
+    "totalRunners": 30
+  },
+  {
+    "raceNo": 4,
+    "favoriteNumber": 1,
+    "favoriteName": "Savvy Hallie (AUS)",
+    "favoriteOdds": 2.7,
+    "favoriteRating": 111.0,
+    "totalRunners": 25
+  },
+  {
+    "raceNo": 5,
+    "favoriteNumber": 1,
+    "favoriteName": "Cherry Bomshell (AUS)",
+    "favoriteOdds": 2.9,
+    "favoriteRating": 103.0,
+    "totalRunners": 8
+  },
+  {
+    "raceNo": 6,
+    "favoriteNumber": 8,
+    "favoriteName": "Campione D'Italia (AUS)",
+    "favoriteOdds": 3.4,
+    "favoriteRating": 112.0,
+    "totalRunners": 8
+  },
+  {
+    "raceNo": 7,
+    "favoriteNumber": 8,
+    "favoriteName": "Autumn Glow (AUS)",
+    "favoriteOdds": 1.4,
+    "favoriteRating": 120.0,
+    "totalRunners": 11
+  },
+  {
+    "raceNo": 8,
+    "favoriteNumber": 1,
+    "favoriteName": "Columbia Blue (AUS)",
+    "favoriteOdds": 3.4,
+    "favoriteRating": 79.0,
+    "totalRunners": 13
+  }
+]

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historique - PMU Predictor</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, sans-serif; background: #f0f2f5; padding: 1rem; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .header { background: #1a2a3a; color: white; padding: 1rem; border-radius: 12px; margin-bottom: 1rem; display: flex; justify-content: space-between; align-items: center; }
+        .header h1 { font-size: 1.2rem; }
+        .back-btn { color: white; text-decoration: none; background: rgba(255,255,255,0.15); padding: 0.3rem 0.8rem; border-radius: 6px; }
+        .card { background: white; padding: 1rem; border-radius: 12px; margin-bottom: 1rem; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+        .stats-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.5rem; }
+        .stat { background: #f8f9fa; padding: 0.5rem; border-radius: 8px; text-align: center; }
+        .stat-value { font-size: 1.2rem; font-weight: bold; color: #1a2a3a; }
+        .stat-label { font-size: 0.6rem; color: #888; text-transform: uppercase; }
+        .bet-item { display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #eee; font-size: 0.85rem; flex-wrap: wrap; }
+        .bet-item:last-child { border-bottom: none; }
+        .status-win { background: #d4edda; color: #155724; padding: 0.15rem 0.6rem; border-radius: 12px; font-size: 0.7rem; font-weight: 600; }
+        .status-loss { background: #f8d7da; color: #721c24; padding: 0.15rem 0.6rem; border-radius: 12px; font-size: 0.7rem; font-weight: 600; }
+        .status-pending { background: #fff3cd; color: #856404; padding: 0.15rem 0.6rem; border-radius: 12px; font-size: 0.7rem; font-weight: 600; }
+        .profit-positive { color: #28a745; font-weight: bold; }
+        .profit-negative { color: #dc3545; font-weight: bold; }
+        .empty { text-align: center; color: #888; padding: 2rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📜 Historique des paris</h1>
+            <a href="/" class="back-btn">← Retour</a>
+        </div>
+
+        <div class="card">
+            <div class="stats-grid">
+                <div class="stat">
+                    <div class="stat-value" id="totalBets">0</div>
+                    <div class="stat-label">Total paris</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value" id="winRate">-</div>
+                    <div class="stat-label">Taux réussite</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value" id="totalProfit">0€</div>
+                    <div class="stat-label">Profit</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2 style="margin-bottom:0.5rem;">📋 Détails</h2>
+            <div id="betList">
+                <div class="empty">Aucun pari enregistré</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function loadHistory() {
+            fetch('/api/bets')
+                .then(r => r.json())
+                .then(data => {
+                    if (data.success) {
+                        const stats = data.stats || {};
+                        document.getElementById('totalBets').textContent = stats.total_bets || 0;
+                        document.getElementById('winRate').textContent = stats.win_rate ? stats.win_rate.toFixed(1) + '%' : '-';
+                        document.getElementById('totalProfit').textContent = (stats.total_profit || 0) + '€';
+                        
+                        const container = document.getElementById('betList');
+                        const bets = data.bets || [];
+                        
+                        if (bets.length === 0) {
+                            container.innerHTML = '<div class="empty">Aucun pari enregistré</div>';
+                            return;
+                        }
+                        
+                        let html = '';
+                        bets.slice().reverse().forEach(bet => {
+                            const statusClass = bet.result === 'WIN' ? 'status-win' : bet.result === 'LOSS' ? 'status-loss' : 'status-pending';
+                            const profitClass = bet.profit > 0 ? 'profit-positive' : bet.profit < 0 ? 'profit-negative' : '';
+                            
+                            html += `<div class="bet-item">
+                                <div>
+                                    <strong>${bet.horse_name}</strong>
+                                    <span style="color:#888;font-size:0.75rem;">${bet.created_at ? new Date(bet.created_at).toLocaleDateString() : ''}</span>
+                                </div>
+                                <div style="display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;">
+                                    <span>${bet.stake}€ @ ${bet.odds}</span>
+                                    <span class="${statusClass}">${bet.result}</span>
+                                    <span class="${profitClass}">${bet.profit > 0 ? '+' : ''}${bet.profit || 0}€</span>
+                                </div>
+                            </div>`;
+                        });
+                        
+                        container.innerHTML = html;
+                    }
+                });
+        }
+
+        loadHistory();
+        setInterval(loadHistory, 30000);
+    </script>
+</body>
+</html>
