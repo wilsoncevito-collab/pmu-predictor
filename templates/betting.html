@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paris - PMU Predictor</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, sans-serif; background: #f0f2f5; padding: 1rem; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .header { background: #1a2a3a; color: white; padding: 1rem; border-radius: 12px; margin-bottom: 1rem; display: flex; justify-content: space-between; align-items: center; }
+        .header h1 { font-size: 1.2rem; }
+        .back-btn { color: white; text-decoration: none; background: rgba(255,255,255,0.15); padding: 0.3rem 0.8rem; border-radius: 6px; }
+        .card { background: white; padding: 1rem; border-radius: 12px; margin-bottom: 1rem; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+        .card h2 { font-size: 1rem; margin-bottom: 0.5rem; color: #1a2a3a; }
+        .btn { padding: 0.5rem 1rem; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 0.9rem; }
+        .btn-success { background: #28a745; color: white; }
+        .btn-success:hover { background: #218838; }
+        .btn-primary { background: #1a2a3a; color: white; }
+        .btn-primary:hover { background: #2a4a6a; }
+        .btn-danger { background: #dc3545; color: white; }
+        .btn-danger:hover { background: #c82333; }
+        input, select { width: 100%; padding: 0.5rem; border: 1px solid #ddd; border-radius: 6px; margin-bottom: 0.5rem; font-size: 0.9rem; }
+        label { font-weight: 600; font-size: 0.8rem; color: #555; display: block; margin-bottom: 0.2rem; }
+        .bet-item { display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #eee; font-size: 0.85rem; flex-wrap: wrap; align-items: center; }
+        .bet-item:last-child { border-bottom: none; }
+        .status-win { background: #d4edda; color: #155724; padding: 0.15rem 0.6rem; border-radius: 12px; font-size: 0.7rem; font-weight: 600; }
+        .status-loss { background: #f8d7da; color: #721c24; padding: 0.15rem 0.6rem; border-radius: 12px; font-size: 0.7rem; font-weight: 600; }
+        .status-pending { background: #fff3cd; color: #856404; padding: 0.15rem 0.6rem; border-radius: 12px; font-size: 0.7rem; font-weight: 600; }
+        .profit-positive { color: #28a745; font-weight: bold; }
+        .profit-negative { color: #dc3545; font-weight: bold; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; }
+        @media (max-width: 600px) { .form-row { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>💰 Paris</h1>
+            <a href="/" class="back-btn">← Retour</a>
+        </div>
+
+        <div class="card">
+            <h2>➕ Ajouter un pari</h2>
+            <form id="betForm" onsubmit="addBet(event)">
+                <div class="form-row">
+                    <div>
+                        <label>Date</label>
+                        <input type="date" id="betDate" required>
+                    </div>
+                    <div>
+                        <label>Cheval</label>
+                        <input type="text" id="betHorse" placeholder="Nom du cheval" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div>
+                        <label>Mise (€)</label>
+                        <input type="number" id="betStake" placeholder="10" step="0.5" required>
+                    </div>
+                    <div>
+                        <label>Cote</label>
+                        <input type="number" id="betOdds" placeholder="3.5" step="0.1" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-success" style="width:100%;">💾 Enregistrer le pari</button>
+            </form>
+            <div id="betMessage" style="margin-top:0.5rem;"></div>
+        </div>
+
+        <div class="card">
+            <h2>📜 Historique des paris</h2>
+            <button class="btn btn-primary" style="width:100%;margin-bottom:0.5rem;" onclick="loadBets()">🔄 Rafraîchir</button>
+            <div id="betList">
+                <div style="color:#888;text-align:center;padding:1rem;">Chargement...</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('betDate').value = new Date().toISOString().split('T')[0];
+
+        function addBet(event) {
+            event.preventDefault();
+            
+            const data = {
+                date: document.getElementById('betDate').value,
+                horse_name: document.getElementById('betHorse').value,
+                stake: parseFloat(document.getElementById('betStake').value),
+                odds: parseFloat(document.getElementById('betOdds').value),
+                result: 'PENDING',
+                profit: 0
+            };
+            
+            fetch('/api/bets', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(data)
+            })
+            .then(r => r.json())
+            .then(data => {
+                const msg = document.getElementById('betMessage');
+                if (data.success) {
+                    msg.innerHTML = `<div style="color:#28a745;">✅ ${data.message}</div>`;
+                    document.getElementById('betForm').reset();
+                    document.getElementById('betDate').value = new Date().toISOString().split('T')[0];
+                    loadBets();
+                } else {
+                    msg.innerHTML = `<div style="color:#dc3545;">❌ ${data.error}</div>`;
+                }
+            })
+            .catch(err => {
+                document.getElementById('betMessage').innerHTML = `<div style="color:#dc3545;">❌ ${err.message}</div>`;
+            });
+        }
+
+        function loadBets() {
+            const container = document.getElementById('betList');
+            container.innerHTML = '<div style="color:#888;text-align:center;padding:1rem;">Chargement...</div>';
+            
+            fetch('/api/bets')
+                .then(r => r.json())
+                .then(data => {
+                    if (data.success && data.bets && data.bets.length > 0) {
+                        let html = '';
+                        data.bets.forEach(bet => {
+                            const statusClass = bet.result === 'WIN' ? 'status-win' : bet.result === 'LOSS' ? 'status-loss' : 'status-pending';
+                            const profitClass = bet.profit > 0 ? 'profit-positive' : bet.profit < 0 ? 'profit-negative' : '';
+                            
+                            html += `<div class="bet-item">
+                                <div>
+                                    <strong>${bet.horse_name}</strong>
+                                    <span style="color:#888;font-size:0.75rem;">${bet.date}</span>
+                                </div>
+                                <div style="display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;">
+                                    <span>${bet.stake}€ @ ${bet.odds}</span>
+                                    <span class="${statusClass}">${bet.result}</span>
+                                    <span class="${profitClass}">${bet.profit > 0 ? '+' : ''}${bet.profit || 0}€</span>
+                                    ${bet.result === 'PENDING' ? `<button class="btn btn-danger" style="font-size:0.7rem;padding:0.2rem 0.5rem;" onclick="updateResult(${bet.id}, 'WIN', ${bet.stake * bet.odds - bet.stake})">Gagné</button><button class="btn btn-danger" style="font-size:0.7rem;padding:0.2rem 0.5rem;" onclick="updateResult(${bet.id}, 'LOSS', -${bet.stake})">Perdu</button>` : ''}
+                                </div>
+                            </div>`;
+                        });
+                        container.innerHTML = html;
+                    } else {
+                        container.innerHTML = '<div style="color:#888;text-align:center;padding:1rem;">Aucun pari enregistré</div>';
+                    }
+                })
+                .catch(err => {
+                    container.innerHTML = `<div style="color:#dc3545;">❌ ${err.message}</div>`;
+                });
+        }
+
+        function updateResult(id, result, profit) {
+            fetch(`/api/bets/${id}`, {
+                method: 'PUT',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({result: result, profit: profit})
+            })
+            .then(r => r.json())
+            .then(data => {
+                if (data.success) {
+                    loadBets();
+                } else {
+                    alert('❌ Erreur: ' + data.error);
+                }
+            });
+        }
+
+        loadBets();
+    </script>
+</body>
+</html>
